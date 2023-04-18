@@ -2,8 +2,20 @@ function verificaSeoChutePossuiUmValorValido(chute) {
     const numero = +chute
 
     if (chuteForInvalido(numero)) {
-       elementoChute.innerHTML += '<div>Valor invalido ou não é um número</div>'
-       return
+        if (chute.toUpperCase() === "STOP" || "Stop" || "stop"){
+            
+            document.body.innerHTML = 
+            `
+            <h2>Gamer Over!!!</h2>
+            <h3>Pressione o botão para jogar novamente</h3>
+            <button id="jogar-novamente" class="btn-jogar">Jogar Novamente</button>
+            `
+            document.body.style.backgroundColor = "black";
+        } else {
+            elementoChute.innerHTML += '<div>Valor invalido ou não é um número</div>'
+            return
+        }
+      
     }
 
 
